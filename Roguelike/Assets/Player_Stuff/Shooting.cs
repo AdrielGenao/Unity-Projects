@@ -25,7 +25,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot() //Shooting Function
     {
-        //Second call in if statement is to make sure player cant shoot itself
+        //if statement is to make sure player cant shoot itself
         if(pm.direction == 1 && mouse.x >= Right.position.x){ //Shooting towards right direction
             Right.up = mouse - Right.position;
             GameObject arrow = Instantiate(arrowPrefab, Right.position, Right.rotation);
