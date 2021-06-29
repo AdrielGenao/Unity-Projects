@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     public Transform playerPos;
     public Vector3 mouseDir;
     public GameObject aim;
+    public int shots=1;
 
     // Update is called once per frame
     void Update()
