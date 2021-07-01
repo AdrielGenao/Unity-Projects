@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     public Transform playerPos;
     public Vector3 mouseDir;
     public GameObject aim;
-    public int shots=1;
+    public int shots=0;
 
     // Update is called once per frame
     void Update()
@@ -28,14 +28,18 @@ public class Movement : MonoBehaviour
             mouseDir.y=mouse.y+(playerPos.position.y-mouse.y)/2;
             playerPos.Rotate(0f,0f,90f);
             StartCoroutine(Waiting());
+            if (Input.GetMouseButton(0)==false){
+                shots=0;
+                Shoot();
         }
     }
     void Shoot(){
-        player.AddForce(mouseDir*force,ForceMode2D.Impulse);
+        player.AddForce(playerPos.up*force,ForceMode2D.Impulse);
     }
     IEnumerator Waiting(){
         GameObject aiming=Instantiate(aim,mouseDir,playerPos.rotation);
         yield return new WaitForSeconds(0.001f);
         Destroy(aiming);
     }
+}
 }

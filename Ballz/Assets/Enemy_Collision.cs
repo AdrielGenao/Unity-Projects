@@ -14,6 +14,7 @@ public class Enemy_Collision : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collide){ //If collision
             if(collide.gameObject.name=="Player"){ //If collision is an obstacle on map or enemy
                 player.AddForce(player_pos.up*force,ForceMode2D.Impulse);
+                movement.shots+=1;
                 Destroy(target);
             }
         }
