@@ -15,7 +15,6 @@ public class Enemy_Collision : MonoBehaviour
             if(collide.gameObject.name=="Target(Clone)"){ //If collision is an obstacle on map or enemy
                 player.AddForce(target_pos.up*force,ForceMode2D.Impulse);
                 movement.shots+=1;
-                Destroy(target);
             }
         }
 }
