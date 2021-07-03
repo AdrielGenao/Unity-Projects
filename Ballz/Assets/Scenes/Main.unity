@@ -240,6 +240,8 @@ MonoBehaviour:
   player: {fileID: 1970467258}
   player_pos: {fileID: 1970467260}
   force: 15
+  movement: {fileID: 1970467261}
+  target_pos: {fileID: 157059028}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,11 +624,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouse: {x: 0, y: 0, z: 0}
   player: {fileID: 1970467258}
-  force: 20
+  force: 25
   cam: {fileID: 519420031}
   playerPos: {fileID: 1970467260}
   mouseDir: {x: 0, y: 0, z: 0}
   aim: {fileID: 1050403623086794887, guid: 0e563881c31bf4cdda5db48af4cd1a70, type: 3}
+  shots: 1
+  start: 1
 --- !u!58 &1970467262
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -679,6 +683,8 @@ MonoBehaviour:
   player: {fileID: 1970467258}
   player_pos: {fileID: 1970467260}
   force: 15
+  movement: {fileID: 1970467261}
+  target_pos: {fileID: 2089786564}
 --- !u!58 &2089786562
 CircleCollider2D:
   m_ObjectHideFlags: 0
