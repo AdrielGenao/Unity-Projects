@@ -32,9 +32,6 @@ public class Movement : MonoBehaviour
                 mouseDir.y=mouse.y+(playerPos.position.y-mouse.y)/2;
                 playerPos.Rotate(0f,0f,90f);
                 distance=Vector3.Distance(playerPos.position,mouse);
-                if (distance>3){
-                    distance=3;
-                }
                 StartCoroutine(Waiting());
             }
         }
