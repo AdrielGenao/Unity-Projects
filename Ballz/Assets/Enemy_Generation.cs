@@ -12,16 +12,20 @@ public class Enemy_Generation : MonoBehaviour
 
     void Start()
     {
-        for(int a=0;a<=3;a++){
-        enemySpawn=new Vector3(player.position.x+Random.Range(1.5f,4.5f),player.position.y+Random.Range(1.5f,2.5f),0f);
+        for(int a=0;a<=4;a++){
+        enemySpawn=new Vector3(player.position.x+Random.Range(1f,4.5f),player.position.y+Random.Range(1f,2.5f),0f);
+        GameObject target=Instantiate(enemy,enemySpawn,targetrot.rotation);
         spawns.Add(enemySpawn.x);
         if(a>0){
-            if((Mathf.Abs(spawns[a-1]-enemySpawn.x)<=0.5f)){
-                spawns.RemoveAt(a);
-                a--;
+            for(int i=0;i<a;i++){
+                if((Mathf.Abs(spawns[i]-enemySpawn.x)<=1f)){
+                    spawns.RemoveAt(a);
+                    Destroy(target);
+                    a--;
+                    break;
+                }
             }
         }
-        GameObject target=Instantiate(enemy,enemySpawn,targetrot.rotation);
         }
     }
 

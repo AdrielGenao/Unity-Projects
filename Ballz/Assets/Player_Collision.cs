@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Collision : MonoBehaviour
+public class Player_Collision : MonoBehaviour
 {
-    public GameObject target;
     public Collider2D col;
     public Rigidbody2D player;
     public float force=20f;
