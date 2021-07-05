@@ -14,13 +14,19 @@ public class Movement : MonoBehaviour
     public int shots=1;
     public float distance;
 
+    void Start(){
+        player.gravityScale=0f;
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        if(shots==1){
+        if(shots>=1){
             if (Input.GetMouseButtonUp(0)){
+                player.gravityScale=0.06f;
                 playerPos.Rotate(0f,0f,-90f);
                 shots-=1;
+                player.drag=0.5f;
                 Shoot();
             }
             if(Input.GetMouseButton(0)) //If mouse press
@@ -32,6 +38,8 @@ public class Movement : MonoBehaviour
                 mouseDir.y=mouse.y+(playerPos.position.y-mouse.y)/2;
                 playerPos.Rotate(0f,0f,90f);
                 distance=Vector3.Distance(playerPos.position,mouse);
+                player.drag=2.5f;
+                player.gravityScale=0f;
                 StartCoroutine(Waiting());
             }
         }

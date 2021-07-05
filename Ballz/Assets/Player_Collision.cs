@@ -6,7 +6,7 @@ public class Player_Collision : MonoBehaviour
 {
     public Collider2D col;
     public Rigidbody2D player;
-    public float force=20f;
+    public float force=15f;
     public Movement movement;
     public Transform target_pos;
     // Update is called once per frame
